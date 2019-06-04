@@ -1,0 +1,23 @@
+.customer{
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: #e0e0e0;
+	display: inline-block;
+}
+.rating{
+	display: inline-block;
+	color: white;
+}
+.fa-star{
+	font-size: 12px !important;
+}
+.social-icon{
+	width: 30px;
+	height: 30px;
+	border: 1px solid white;
+	border-radius: 50%;
+}
+.social-icon a .fab{
+	color: white !important;
+}
