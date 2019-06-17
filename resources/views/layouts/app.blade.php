@@ -32,6 +32,7 @@
 
 </head>
 <body>
+    @yield('modal')
     <header class="header_area">
             <div class="top_menu">
               <div class="container">
@@ -95,18 +96,12 @@
                                         <li class="nav-item submenu dropdown">
                                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
                                             <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="category.html">Shop Category</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="single-product.html">Product Details</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="checkout.html">Product Checkout</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="cart.html">Shopping Cart</a>
-                                                </li>
+                                                @forelse($categories as $category)
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">{{$category->name}}</a>
+                                                    </li>
+                                                @empty{{''}}
+                                                @endforelse
                                             </ul>
                                         </li>
                                         <li class="nav-item submenu dropdown">
@@ -243,5 +238,12 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ asset('js/skeleton.js') }}"></script>
+    @yield('js')
+    @yield('extra-js')
 </body>
 </html>
